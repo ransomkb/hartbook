@@ -1,0 +1,202 @@
+
+
+revamp all help messages for new features;
+    home.jsp: add language change link info and check other links
+    options.jsp: change name, add info on partial or whole list
+    study.jsp: add info about mouseovers and Home link
+    review.jsp: add info about Home link
+    test.jsp: add info about Home link
+    edit_lists.jsp: add info about example sentences, adjust for other languages two or three
+    display_lists.jsp: add info about moving a number of rows
+
+find out why List C is considered to be blank even though it has one element
+
+make sure any messages in Expalanations.java get moved to Messages.java
+
+change all the messages settings from jsps to servlets; now double check which jsps need ss.message = ""
+    but a ss.message = ""; at the end of each jsp, after they have been loaded
+
+clean up messages, all generally, specifically after finishing 50 in Study
+
+get all messages translated and fix J errors K told you of
+
+start adding examp sentences to multiple rows
+
+insert comments explaining all the methods; done allStudHistos; working on xxxx
+
+fix j font
+
+button values: some doubles so check if can be reused
+
+change arraylists to sets where applicable
+
+write the sql to create tables for institutions to hold the lists of their teachers
+
+change search so it happens in fields - as you type would be cool
+
+fix error jsp
+
+check out all the IMPORTANT points
+
+check unused methods and vars
+
+fix help as footer image is cut off; also, allow to scroll as can't with long help
+
+find out why test has a correct answer with hitting enter, but doesn't display
+
+fix DBHand.selectList for all as some parts in that and in DBHand.checkList may be in the wrong place; maybe done
+
+make sure folder is set right in all servlets; maybe emergency should send to htmlstuff.folder :: maybe done
+
+separate Sample stuff from FirstHTTP stuff; check name of Sample.jsp button :: done maybe
+
+set ss.templist appropriately from Options.com :: done, maybe
+
+finish repairing study methods; maybe done; try out
+
+check out a jsp or sevlet in hartbook for teachlists, which you may need to add to Hart
+
+create a viewRows.jsp; dbtable.jsp :: maybe unnecessary
+
+fix edit tables so cannot enter c stuff by accident; now it is entered, can't do it again :: maybe don't need
+
+for edit lists, don't display full lists after each button push; maybe needs rs.close at end of jsp;
+    maybe will not be a problem if people use relatively short lists :: maybe don't need
+
+
+Get a GRANT!
+
+contact the Australian consulate
+
+
+Ask Galt to help with script to check strings entered for examp sents;
+    -- Especially for numbers in CreateQuiz
+
+Ask Galt: Is SessionState ss necessary? Should it be synchronized?
+
+Ask Galt if the ss is necessary for Buttons where not used in the method; check Buttons java for unnecessary ss
+
+Ask Galt if the ss.rs should be set to null before each use in dbHandler, and if should close ss.rs after iterating
+
+Ask Galt if a jsp is like a servlet and used by all. If so, I should probably make all variables ss or local
+
+
+
+fix test.jsp ss.message space is broken :: done
+
+create help messages for teachers looking at their students history; unnecessary :: done
+
+fix putty with galt :: done
+
+change create (search function only) and display pages so have a check box to move a group :: done
+
+fix it so array is set at htmlstuff.getMouseOverEng line 111; seems to happen with wholelist;
+    set ss.templist better in Options; fix how donotuselist is used in dbhandler :: done
+
+make background of switch_language popup white :: done
+
+deal with no integer input into create quiz but hitting enter :: done
+
+add help link to study, review and test, next to Home :: done
+
+fix create lang table jsp used by admin in create lists :: done
+
+check to see if dbdebug is working right :: done
+
+make sure that session is saved properly when leaving study areas; finish by setting savestate properly :: done
+
+fix EditLists.java so returns right mess when Edit clicked with no Radio :: done
+
+fix example sent popup so it changes with the focus rowv in edit list :: done
+
+fix admin jsps as some are not updated; finished all the important ones :: mostly done
+
+make sure can edit teacher list names :: done
+
+fix History button in edit_tables.jsp :: done
+
+create a notes.jsp :: done
+
+create a way to edit and improve edit_tlists as it has not recreated properly :: done
+
+update Study for example sentences :: done
+
+finish Study by putting rollover stuff in html of prntStdy1 :: done
+
+make sure variables, string names in debug are correct :: done
+
+check jsps in admin as they might be creating extra ss variables in tomcat :: done
+
+fix it as same session can be used for different IDs; will have to create a new ss after every logout :: done
+
+You probably don't need the Options servlet as StartButtons sets type of study (study, review, test)
+    However, you do need it to handle the other form in options.jsp :: done
+
+move banner to bottom for loggedin jsps :: done
+
+double check and clean up the Firsthandler stuff with login to make sure password and userID are both correct :: done
+
+make sure the register again stuff has been taken care of :: done
+
+fix the tryagain check logged in piece :: done
+
+fix html tables as some of them seem to be placed oddly; Study lacks a column in Review :: done
+
+Split old servlets into Jsp and servlet :: done
+
+take care of study history stuff :: done
+
+take care of Choose Languages; finish by using switch_lang.jsp in both Hart and hartbook projects :: done
+
+take care of Clear :: done
+
+finish Add popup :: done
+
+fix test.jsp and Test; find out why advancing by two :: done
+
+take care of Create a List Name :: done
+
+Finish the servlet for Search and replace it in JSPs :: done
+
+find out what is wrong with create quiz :: done
+
+find out why Number of rounds is -1 in Study :: done
+
+fix search as it doesn't return the right info :: done
+
+fix Options java as it is now just like a template using language.java :: done
+
+make all servlets check if getParameter is null by button names; make sure the names in servlets and jsp are same :: done
+
+finish edit_tables.jsp; change second and third tables and prntSearch :: done
+
+finish create_quiz methods in bookmethods :: done
+
+finish test.jsp by moving all iterations and ifs to BookMethods :: done
+
+Create templates for all levels of jsp :: done
+
+
+When the form is being submitted, you can use javascript to add parameters "dynamically" as the form is beign submitted.
+function addMenuContextParam (form,paramValue) {
+  if (document.getElementById) {
+    var input = document.createElement('INPUT');
+      if (document.all) { // what follows should work 
+                          // with NN6 but doesn't in M14
+        input.type = 'HIDDEN';
+        input.name = 'SOME_NAME';
+        input.value = paramValue;
+      }
+      else if (document.getElementById) { // so here is the
+                                          // NN6 workaround
+        input.setAttribute('type', 'HIDDEN');
+        input.setAttribute('name', 'SOME_NAME');
+        input.setAttribute('value', paramValue);
+       }
+    form.appendChild(input);
+  }
+}
+
+
+Look into this way of authenticating the user; maybe more secure
+    http://httpd.apache.org/docs/1.3/howto/auth.html#basicworks

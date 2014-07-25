@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <description>Web Application to study vocabulary in various ways.</description>
+    <display-name>Hart Vocab</display-name>
+    <servlet>
+        <description>Creates a parameter in Tomcat to hold a Session State object called "ss".</description>
+        <servlet-name>GetSessionState</servlet-name>
+        <servlet-class>hartservlets.GetSessionState</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Servlet that handles all the sites first pages' requests and responses, 
+including Language, Sampler, Register and Log In.</description>
+        <servlet-name>FirstHTTPHandler</servlet-name>
+        <servlet-class>hartservlets.FirstHTTPHandler</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Handles button for Changing the language that HTML is displayed in: English or Japanese</description>
+        <servlet-name>Language</servlet-name>
+        <servlet-class>hartservlets.Language</servlet-class>
+    </servlet>
+    <servlet><description>Handles the studying selection.</description><servlet-name>StartButtons</servlet-name>
+        <servlet-class>hartservlets.StartButtons</servlet-class>
+        </servlet>
+    <servlet>
+        <description>Handles the search function for vocab</description>
+        <servlet-name>Search</servlet-name>
+        <servlet-class>hartservlets.Search</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Allows teachers to create a quiz from their lists.</description>
+        <servlet-name>CreateQuiz</servlet-name>
+        <servlet-class>hartservlets.CreateQuiz</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Handles the requests from display_lists.jsp</description>
+        <servlet-name>DisplayLists</servlet-name>
+        <servlet-class>hartservlets.DisplayLists</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Handles requests to insert, update and remove rows in a language table.</description>
+        <servlet-name>EditLists</servlet-name>
+        <servlet-class>hartservlets.EditLists</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Handles updates to any teacher's lists.</description>
+        <servlet-name>EditTLists</servlet-name>
+        <servlet-class>hartservlets.EditTLists</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Handles requests for repeat rows in DB.</description>
+        <servlet-name>FindSame</servlet-name>
+        <servlet-class>hartservlets.FindSame</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Handles requests to set ss variables for study, review and test.</description>
+        <servlet-name>Options</servlet-name>
+        <servlet-class>hartservlets.Options</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Handles request made to study.jsp</description>
+        <servlet-name>Study</servlet-name>
+        <servlet-class>hartservlets.Study</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Handles choices of Review Buttons and Moveset.</description>
+        <servlet-name>Review</servlet-name>
+        <servlet-class>hartservlets.Review</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Handles requests for test.jsp</description>
+        <servlet-name>Test</servlet-name>
+        <servlet-class>hartservlets.Test</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Lets a teacher edit the names of their lists.</description>
+        <servlet-name>EditListNames</servlet-name>
+        <servlet-class>hartservlets.EditListNames</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditTables</servlet-name>
+        <servlet-class>hartservlets.EditTables</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Saves study info to database, then forwards to start_button.jsp</description>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>hartservlets.Home</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CreateLangTable</servlet-name>
+        <servlet-class>hartservlets.CreateLangTable</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Sample</servlet-name><servlet-class>hartservlets.Sample</servlet-class></servlet>
+    <servlet-mapping>
+        <servlet-name>GetSessionState</servlet-name>
+        <url-pattern>/GetSessionState</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FirstHTTPHandler</servlet-name>
+        <url-pattern>/FirstHTTPHandler</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Language</servlet-name>
+        <url-pattern>/Language</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Search</servlet-name>
+        <url-pattern>/Search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StartButtons</servlet-name>
+        <url-pattern>/StartButtons</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateQuiz</servlet-name>
+        <url-pattern>/CreateQuiz</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayLists</servlet-name>
+        <url-pattern>/DisplayLists</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditLists</servlet-name>
+        <url-pattern>/EditLists</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditTLists</servlet-name>
+        <url-pattern>/EditTLists</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FindSame</servlet-name>
+        <url-pattern>/FindSame</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Options</servlet-name>
+        <url-pattern>/Options</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Study</servlet-name>
+        <url-pattern>/Study</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Review</servlet-name>
+        <url-pattern>/Review</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Test</servlet-name>
+        <url-pattern>/Test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditListNames</servlet-name>
+        <url-pattern>/EditListNames</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditTables</servlet-name>
+        <url-pattern>/EditTables</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/Home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Sample</servlet-name>
+        <url-pattern>/Sample</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateLangTable</servlet-name>
+        <url-pattern>/CreateLangTable</url-pattern>
+    </servlet-mapping>
+    </web-app>

@@ -1,0 +1,1 @@
+d:\PuttyShell\pscp dist\hartbook.war root@www.harttongue.com:/opt/jboss4/server/default/deploy/hartbook.war
